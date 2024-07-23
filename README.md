@@ -4,5 +4,5 @@ Split large tar along boundaries
 Modified after 
 https://github.com/dmuth/tarsplit
 
-- no compression for seismic datasets
+- no compression 
 - make scripts for merging back the parts
