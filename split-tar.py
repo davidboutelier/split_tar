@@ -15,7 +15,6 @@ def get_chunk_size(t, num):
 
 	return(retval)
 
-
 def open_chunkfile(file, part, num):
 
 	out = None
@@ -23,8 +22,7 @@ def open_chunkfile(file, part, num):
 	part_formatted = str(part).zfill(num_len)
 
 	filename = os.path.join(folder, f"{os.path.basename(file)}-part-{part_formatted}-of-{num}")
-	if not dry_run:
-		out = tarfile.open(filename, "w")
+	out = tarfile.open(filename, "w")
 
 	return(filename, out)
 
@@ -71,8 +69,6 @@ def make_merge_scripts(original_tar_file, num_parts):
             f.write('echo "Process complete. $((duration / 60)) minutes and $((duration % 60)) seconds elapsed."\n')
 
 
-
-
 if __name__ == "__main__":
 
     original_tar_file = os.path.join('F:\\','ARCHIVES','DEG','DEG-','11314120539-DEG-HEMI-CORR_SHOT_GATHER_SEGY.tar')
@@ -113,7 +109,6 @@ if __name__ == "__main__":
         f = t.extractfile(name)
         info = t.getmember(name)
 		
-
         num_files_in_current_chunk += 1
         pbar.update(1)
 
@@ -134,7 +129,7 @@ if __name__ == "__main__":
     t.close()
     pbar.close()
 
-    print('Creating 2 scripts to reassemble the parts')
+    print('Creating 2 scripts to reassemble the parts - to be distributed with the parts')
 
     make_merge_scripts(original_tar_file, num_parts)
 
