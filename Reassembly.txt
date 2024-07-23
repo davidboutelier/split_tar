@@ -1,0 +1,18 @@
+
+How to merge the parts together
+The script will create a single folder and move all the files from the parts
+
+Windows
+---------------
+Place the bat file and the tar archives in the same folder
+Open a powershell terminal in the folder (Shift + right click then Open Powershell window here)
+Execute the bat file (./merge_parts.bat)
+
+Linux & Mac OS (and WSL on Windows)
+---------------
+Place the bash file and the tar archives in the same folder
+Open a terminal in the folder 
+Execute the bat file (./merge_parts.bash)
+
+Tar archive was split using Douglas Muth's Tarsplit - A utility to split tarballs into smaller pieces along file boundaries.
+https://github.com/dmuth/tarsplit
